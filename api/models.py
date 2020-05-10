@@ -22,6 +22,7 @@ class Special(models.Model):
     )
 
     DAY_CHOICES = (
+        ('All Days', 'All Days'),
         ('Monday', 'Monday'),
         ('Tuesday', 'Tuesday'),
         ('Wednesday', 'Wednesday'),
@@ -40,15 +41,9 @@ class Special(models.Model):
     title = models.CharField(max_length=80)
     
     category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default='food')
-    
-    # 'True' if it is an everyday special.
-    # Do not set any individual days to 'True' while this is true.
-    # Doing this will not throw an error - just unnecessary.
-    every_day = models.BooleanField(default=False)
 
     # The day of the week the special falls on
-    # If it is an every day special and every_day=True, these can be left as false.
-    day = models.CharField(max_length=10, choices=DAY_CHOICES, default='')
+    day = models.CharField(max_length=10, choices=DAY_CHOICES, default='All Days')
 
     # auto timestamp
     created_at = models.DateTimeField(auto_now_add=True)
