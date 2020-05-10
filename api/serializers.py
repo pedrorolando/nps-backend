@@ -6,7 +6,7 @@ from .models import Restaurant, Special
 
 class SpecialListingField(serializers.RelatedField):
     def to_representation(self, value):
-        return {'special_id': value.id, 'title': value.title, 'category': value.category, 'day': value.day, 'every_day': value.every_day, 'created_at': value.created_at}
+        return {'special_id': value.id, 'title': value.title, 'category': value.category, 'day': value.day, 'created_at': value.created_at}
 
 
 # SPECIAL SERIALIZER
@@ -15,7 +15,7 @@ class SpecialSerializer(serializers.ModelSerializer):
 
     class Meta:
         fields = ['id', 'restaurant', 'title',
-                  'category', 'day', 'every_day', 'created_at']
+                  'category', 'day', 'created_at']
         read_only_fields = ['created_at']
         model = Special
 
