@@ -22,13 +22,13 @@ class Special(models.Model):
     )
 
     DAY_CHOICES = (
-        ('monday', 'monday'),
-        ('tuesday', 'tuesday'),
-        ('wednesday', 'wednesday'),
-        ('thursday', 'thursday'),
-        ('friday', 'friday'),
-        ('saturday', 'saturday'),
-        ('sunday', 'sunday'),
+        ('Monday', 'Monday'),
+        ('Tuesday', 'Tuesday'),
+        ('Wednesday', 'Wednesday'),
+        ('Thursday', 'Thursday'),
+        ('Friday', 'Friday'),
+        ('Saturday', 'Saturday'),
+        ('Sunday', 'Sunday'),
     )
 
     # Note: "related_name" is what "each special is to a given restaurant."
