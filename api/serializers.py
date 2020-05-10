@@ -6,7 +6,7 @@ from .models import Restaurant, Special
 
 class SpecialListingField(serializers.RelatedField):
     def to_representation(self, value):
-        return {'special_id': value.id, 'title': value.title, 'category': value.category, 'day': value.day, 'created_at': value.created_at}
+        return {'special_id': value.id, 'title': value.title, 'category': value.category, 'day': value.day}
 
 
 # SPECIAL SERIALIZER
