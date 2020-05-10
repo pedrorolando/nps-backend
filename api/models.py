@@ -21,6 +21,16 @@ class Special(models.Model):
         ('liquor', 'liquor'),
     )
 
+    DAY_CHOICES = (
+        ('monday', 'monday'),
+        ('tuesday', 'tuesday'),
+        ('wednesday', 'wednesday'),
+        ('thursday', 'thursday'),
+        ('friday', 'friday'),
+        ('saturday', 'saturday'),
+        ('sunday', 'sunday'),
+    )
+
     # Note: "related_name" is what "each special is to a given restaurant."
     # Usually it is just the lower-cased plural of the model it is within.
     # Note 2: the "to_field='name'" arg makes it so that the Query returns the actual name of the restaurant (b/c the Restaurant's name field is 'name), rather than the restaurant's pk. 
@@ -38,13 +48,7 @@ class Special(models.Model):
 
     # The day of the week the special falls on
     # If it is an every day special and every_day=True, these can be left as false.
-    monday = models.BooleanField(default=False)
-    tuesday = models.BooleanField(default=False)
-    wednesday = models.BooleanField(default=False)
-    thursday = models.BooleanField(default=False)
-    friday = models.BooleanField(default=False)
-    saturday = models.BooleanField(default=False)
-    sunday = models.BooleanField(default=False)
+    day = models.CharField(max_length=10, choices=DAY_CHOICES, default='')
 
     # auto timestamp
     created_at = models.DateTimeField(auto_now_add=True)
