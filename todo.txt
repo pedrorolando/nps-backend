@@ -3,11 +3,4 @@ https://www.youtube.com/watch?v=6DI_7Zja8Zc
 
 2. Set environment variables (Corey S should have a vid)
 
-3. Add postgres db to heroku.
-https://blog.usejournal.com/deploying-django-to-heroku-connecting-heroku-postgres-fcc960d290d1
-
-4. Add tests.
-
-5. Add permissions.
-
-6. Make SpecialListingField for Special JSON objects inside Restaurant JSON - unnecessary to have the name of the Restaurant nested in there.
+3. Add tests.
