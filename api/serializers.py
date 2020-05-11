@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Restaurant, Special
+from .models import Restaurant, Special, Request
 
 # CUSTOM SPECIAL LISTING FIELD
 # This lives inside the RESTAURANT SERIALIZER and determines how each special appears as a JSON object inside the restaurant JSON object - would have just lazily used the entire SPECIAL SERIALIZER as the field, but did not like redundancy of repeating the restaurant name.
@@ -32,4 +32,15 @@ class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
         fields = ['id', 'name', 'address', 'created_at', 'specials']
-        read_only_fields = ['created_at']
+        read_only_fields = ['id', 'created_at']
+    
+
+# REQUEST SERIALIZER
+
+class RequestSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        fields = ['id', 'restaurant', 'title',
+                  'category', 'day', 'created_at']
+        read_only_fields = ['id', 'created_at']
+        model = Request
