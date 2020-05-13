@@ -5,6 +5,4 @@ https://www.youtube.com/watch?v=6DI_7Zja8Zc
 
 3. Add tests.
 
-4. "Requests" model + serializer
-
 5. View Level permissions - /restaurants and /specials are AuthenticateOrReadOnly, and /requests accepts GET/POST requests but can only DELETE if authenticated. 
